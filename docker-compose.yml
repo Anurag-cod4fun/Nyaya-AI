@@ -1,0 +1,25 @@
+services:
+
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: nyaya-postgres
+
+    environment:
+      POSTGRES_DB: nyaya
+      POSTGRES_USER: nyaya
+      POSTGRES_PASSWORD: nyaya
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - nyaya_postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nyaya -d nyaya"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  nyaya_postgres_data:

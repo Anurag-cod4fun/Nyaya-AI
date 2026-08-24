@@ -1,0 +1,2 @@
+ALTER TABLE legal_chunks
+ALTER COLUMN embedding TYPE VECTOR(1024);

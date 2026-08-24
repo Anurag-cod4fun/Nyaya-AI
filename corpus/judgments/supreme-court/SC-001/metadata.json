@@ -1,0 +1,19 @@
+{
+    "documentId":  "SC-001",
+    "caseName":  "Maharashtra State Electricity Board v. Sterilite Industries (India)",
+    "year":  2001,
+    "citation":  "(2001) 8 SCC 482",
+    "court":  "SUPREME_COURT",
+    "sourceType":  "JUDGMENT",
+    "authorityLevel":  5,
+    "topics":  [
+                   "breach-of-contract",
+                   "damages",
+                   "arbitration",
+                   "reasonable-compensation"
+               ],
+    "legalSections":  [
+                          "73",
+                          "74"
+                      ]
+}

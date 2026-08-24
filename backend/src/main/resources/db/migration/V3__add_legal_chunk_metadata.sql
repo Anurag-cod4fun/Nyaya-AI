@@ -1,0 +1,8 @@
+ALTER TABLE legal_chunks
+ADD COLUMN chunk_type VARCHAR(50) NOT NULL DEFAULT 'JUDGMENT_PARAGRAPH';
+
+ALTER TABLE legal_chunks
+ADD COLUMN section VARCHAR(50);
+
+ALTER TABLE legal_chunks
+ADD COLUMN metadata JSONB;

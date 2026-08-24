@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/nyaya
+    username: nyaya
+    password: nyaya
+  
+  flyway:
+    enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+nyaya:
+  corpus-root: ${CORPUS_ROOT:../corpus}
+  vertex:
+    url: ${VERTEX_AI_URL:https://aiplatform.googleapis.com/v1/projects/mercurial-history-j8wb7/locations/global/publishers/google/models/gemini-2.5-flash:generateContent}
+    access-token: your_token_here
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
