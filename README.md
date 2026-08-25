@@ -4,6 +4,45 @@ Nyaya AI is a retrieval-augmented legal research assistant for Indian law. It in
 
 > **Important:** Nyaya AI is an assistive legal-intelligence system. It does not replace legal officers, judicial interpretation, or final legal approval.
 
+## Local Setup
+
+Start PostgreSQL/pgvector:
+
+```powershell
+cd C:\Projects\nyaya-ai
+docker compose up -d
+```
+
+Start or verify Ollama. If it is already running, `ollama serve` reports that
+port 11434 is occupied; that is expected.
+
+```powershell
+ollama list
+```
+
+The list must include:
+
+```text
+bge-m3
+```
+
+Start the backend using an absolute POM path. This avoids the common mistake
+of launching Maven from the workspace root, which has no `pom.xml`:
+
+```powershell
+mvn -f C:\Projects\nyaya-ai\backend\pom.xml org.springframework.boot:spring-boot-maven-plugin:4.1.0:run
+```
+
+The backend listens on port 8080.
+
+Start the frontend:
+
+```powershell
+npm --prefix C:\Projects\nyaya-ai\frontend run dev
+```
+
+The frontend is normally available at `http://localhost:5173`.
+
 ## V1 Scope
 
 The POC intentionally focuses on one narrow legal subdomain:
